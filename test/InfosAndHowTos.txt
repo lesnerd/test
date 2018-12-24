@@ -1,0 +1,77 @@
+﻿Lazyness - Difference between static ctor and not having one
+
+The C# specification implies that no types with static constructors should be marked with the beforefieldinit flag. 
+Indeed, this is upheld by the compiler, but with a slightly odd effect. I suspect many programmers believe
+that the following classes were semantically equivalent:
+
+class Test
+{
+    static object o = new object();
+}
+
+class Test
+{
+    static object o;
+
+    static Test()
+    {
+        o = new object();
+    }
+}
+The two classes are not, in fact, the same. They both have type initializers - and the two type initializers are the same. 
+However, the first does not have a static constructor, whereas the second does. This means that the first class can be marked as beforefieldinit 
+and have its type initializer invoked at any time before the first reference to a static field in it. The static constructor doesn't even have to do anything. 
+This third class is equivalent to the second:
+
+class Test
+{
+    static object o = new object();
+
+    static Test()
+    {
+    }
+}
+
+=================================================================================================================================
+
+The difference between single-threading and multi-threading programming (on a single core machine)
+
+
+It depends.
+
+How many cpus do you have? How much I/O is involved in your tasks?
+
+If you have only 1 cpu, and the tasks have no blocking I/O, then the single threaded will finish equal 
+to or faster than multi-threaded, as there is overhead to switching threads.
+
+If you have 1 cpu, but the tasks involve a lot of blocking I/O, you might see a speedup by using 
+threading, assuming work can be done when I/O is in progress.
+
+If you have multiple cpus, then you should see a speedup with the multi-threaded implementation 
+over the single threaded, since more than 1 thread can execute in parallel. Unless of course the 
+tasks are I/O dominated, in which case the limiting factor is your device speed, not cpu power.
+
+=================================================================================================================================
+
+Thread pool will provide benefits for frequent and relatively short operations by
+
+* Reusing threads that have already been created instead of creating new ones (an expensive process)
+
+* Throttling the rate of thread creation when there is a burst of requests for new work items (I believe this is only in .NET 3.5)
+
+* If you queue 100 thread pool tasks, it will only use as many threads as have already been 
+created to service these requests (say 10 for example). The thread pool will make 
+frequent checks (I believe every 500ms in 3.5 SP1) and if there are queued tasks, it will 
+make one new thread. If your tasks are quick, then the number of new threads will be 
+small and reusing the 10 or so threads for the short tasks will be faster than creating 100 threads up front.
+
+* If your workload consistently has large numbers of thread pool requests coming in, then 
+the thread pool will tune itself to your workload by creating more threads in the pool by the 
+above process so that there are a larger number of thread available to process requests
+
+Creating a new thread yourself would be more appropriate if the job were going to be relatively long 
+running (probably around a second or two, but it depends on the specific situation)
+
+@Krzysztof - Thread Pool threads are background threads that will stop when the main thread ends. 
+Manually created threads are foreground by default (will keep running after the main thread has ended), 
+but can be set to background before calling Start on them.
