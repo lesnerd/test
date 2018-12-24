@@ -15,17 +15,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProducerConsumerApplication
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tree_trials", "Tree trials\Tree_trials.csproj", "{A1A44338-18C0-4F5F-A63C-DDC82028C770}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsWithWebBrowser", "WinFormsWithWebBrowser\WinFormsWithWebBrowser.csproj", "{ACD63979-F3E3-49FC-87E3-E554F1304834}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp7.X_Features", "CSharp7.X\CSharp7.X_Features.csproj", "{27A83A9A-F34E-4A04-9618-434C450A9679}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadsAndProblems", "ThreadsAndProblems\ThreadsAndProblems.csproj", "{C382DF3F-97A9-437A-8EA6-4ECE39B1D0B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Producer-Consumer_Dataflow_Pattern", "Producer-Consumer_Dataflow_Pattern\Producer-Consumer_Dataflow_Pattern.csproj", "{48CE24E1-0206-4ED1-A5AE-8F20E1D86A75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Producer-Consumer_Dataflow_Pattern", "Producer-Consumer_Dataflow_Pattern\Producer-Consumer_Dataflow_Pattern.csproj", "{48CE24E1-0206-4ED1-A5AE-8F20E1D86A75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics", "Generics\Generics.csproj", "{D9A45CE5-F335-437F-8046-3D6C463DFAA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Generics", "Generics\Generics.csproj", "{D9A45CE5-F335-437F-8046-3D6C463DFAA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestForGenerics", "UnitTestForGenerics\UnitTestForGenerics.csproj", "{BEE13DC5-4E0C-469C-AF2F-E3BB0DDA93A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestForGenerics", "UnitTestForGenerics\UnitTestForGenerics.csproj", "{BEE13DC5-4E0C-469C-AF2F-E3BB0DDA93A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,18 +97,6 @@ Global
 		{A1A44338-18C0-4F5F-A63C-DDC82028C770}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{A1A44338-18C0-4F5F-A63C-DDC82028C770}.Release|Win32.ActiveCfg = Release|Any CPU
 		{A1A44338-18C0-4F5F-A63C-DDC82028C770}.Release|Win32.Build.0 = Release|Any CPU
-		{ACD63979-F3E3-49FC-87E3-E554F1304834}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ACD63979-F3E3-49FC-87E3-E554F1304834}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ACD63979-F3E3-49FC-87E3-E554F1304834}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{ACD63979-F3E3-49FC-87E3-E554F1304834}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{ACD63979-F3E3-49FC-87E3-E554F1304834}.Debug|Win32.ActiveCfg = Debug|Any CPU
-		{ACD63979-F3E3-49FC-87E3-E554F1304834}.Debug|Win32.Build.0 = Debug|Any CPU
-		{ACD63979-F3E3-49FC-87E3-E554F1304834}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ACD63979-F3E3-49FC-87E3-E554F1304834}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ACD63979-F3E3-49FC-87E3-E554F1304834}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{ACD63979-F3E3-49FC-87E3-E554F1304834}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{ACD63979-F3E3-49FC-87E3-E554F1304834}.Release|Win32.ActiveCfg = Release|Any CPU
-		{ACD63979-F3E3-49FC-87E3-E554F1304834}.Release|Win32.Build.0 = Release|Any CPU
 		{27A83A9A-F34E-4A04-9618-434C450A9679}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{27A83A9A-F34E-4A04-9618-434C450A9679}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27A83A9A-F34E-4A04-9618-434C450A9679}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
