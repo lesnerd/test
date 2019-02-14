@@ -535,10 +535,9 @@ namespace test
         {
             int current_max = 0; // current count
             int max = 0; // overall maximum count
-            int n = S.Length;
 
             // Traverse the input string
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < S.Length; i++)
             {
                 if (S[i] == '(')
                 {

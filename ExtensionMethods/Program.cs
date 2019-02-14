@@ -26,7 +26,6 @@ namespace ExtensionMethods
             bool test = testStr.FindIfThereIsI(FindI);
 
             string s = "dasdasdasdasdDoronkjasdkjhasdkjasd";
-            Console.WriteLine(s.FindDoron());
 
         }
 
