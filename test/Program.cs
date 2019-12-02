@@ -58,8 +58,35 @@ namespace test
 
     class Program
     {
+
+        public static int ASD(int numOfSubFiles, int[] files)
+        {
+            List<int> list = new List<int>();
+            foreach (var i in files)
+            {
+                list.Add(i);
+            }
+            list.Sort();
+            int ret = 0;
+            while (numOfSubFiles >= 2)
+            {
+                ret += list[0] + list[1];
+                list.Add(list[0] + list[1]);
+                list.RemoveAt(0);
+                list.RemoveAt(0);
+                list.Sort();
+                numOfSubFiles--;
+            }
+
+            return ret;
+        }
+
         static void Main(string[] args)
         {
+            int [] arra = new int[]{20, 4, 8, 2};
+            ASD(arra.Length, arra);
+            arra = new int[]{1,2,5,10,35,89};
+            ASD(arra.Length, arra);
             Hashtable h = new Hashtable(); 
 
             Fill(/*ref*/ h); 
